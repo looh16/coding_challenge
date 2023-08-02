@@ -2,6 +2,10 @@ const express = require("express");
 const HttpStatus = require("http-status-codes");
 const router = express.Router();
 const weatherService = require("../service/weather-service");
+const logger = require('../../logger');
+
+const log = logger.createLogger('weather-router');
+
 
 /**
  * http://localhost:5000/api/wheather/country/maputo
@@ -29,6 +33,7 @@ try {
     });
 
 } catch (error) {
+    log.error("Unable to fetch weather data:", error.message);
     res.status(500).json({ error: "Unable to fetch weather data" });
 }
 });
