@@ -1,7 +1,8 @@
+require('dotenv').config();
 const express = require("express");
 const app = express();
 const currencyRouter = require("./currency/currency-router");
-const wheatherRouter = require("./wheather/wheather-router");
+const wheatherRouter = require("./wheather/router/wheather-router");
 const countryRouter = require("./country/country-router");
 
 const PORT = 5000;
