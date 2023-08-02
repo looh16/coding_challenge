@@ -3,15 +3,15 @@ const express = require("express");
 const app = express();
 const logger = require('./logger');
 const currencyRouter = require("./currency/currency-router");
-const wheatherRouter = require("./weather/router/weather-router");
-const countryRouter = require("./country/country-router");
+const weatherRouter = require("./weather/router/weather-router");
+const countryRouter = require("./country/router/country-router");
 
 const log = logger.createLogger('server');
 
 const PORT = 5000;
 
 app.use("/api/currency", currencyRouter);
-app.use("/api/weather", wheatherRouter);
+app.use("/api/weather", weatherRouter);
 app.use("/api/country", countryRouter);
 
 app.listen(5000, () => {

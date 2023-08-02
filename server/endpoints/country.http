@@ -1,0 +1,12 @@
+@baseUrl = http://localhost:5000
+@urlPath = api/country
+
+###
+GET {{baseUrl}}/{{urlPath}}/gdp/MZ
+Content-Type: application/json
+Accept: application/json
+
+###
+GET {{baseUrl}}/{{urlPath}}/population/mz
+Content-Type: application/json
+Accept: application/json
