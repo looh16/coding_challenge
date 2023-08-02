@@ -6,24 +6,23 @@ const logger = require('../../logger');
 
 const log = logger.createLogger('weather-router');
 
-
-/**
- * http://localhost:5000/api/wheather/country/maputo
- */
 router.get("/country/:city", async (req, res) => {
 try {
+    // get the city param
     const city = req.params.city;
-    const data = await weatherService.getCityWeatherForecast(city);
 
-    // Extract the temperature from the API response
-    const temperatureInKelvin = data.main.temp;
+    // call the service to fetch the weather data from the API
+    const temperature = await weatherService.getCityWeatherForecast(city);
 
-    // Convert the temperature to Celsius
-    const temperatureInCelsius = temperatureInKelvin - 273.15;
-
-    // Round the temperature
-    const temperature = Math.round(temperatureInCelsius);
-
+    //check if the temperature is available
+    if(!temperature) {
+        res
+        .status(HttpStatus.StatusCodes.NOT_FOUND)
+        .json({
+            message: "not found"
+        });
+        return false;
+    }
     //send the response
     res
     .status(HttpStatus.StatusCodes.ACCEPTED)
@@ -34,7 +33,6 @@ try {
 
 } catch (error) {
     log.error("Unable to fetch weather data:", error.message);
-    res.status(500).json({ error: "Unable to fetch weather data" });
 }
 });
 

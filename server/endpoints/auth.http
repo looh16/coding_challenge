@@ -1,0 +1,7 @@
+@baseUrl = http://localhost:5000
+@urlPath = api/weather
+
+###
+GET {{baseUrl}}/{{urlPath}}/country/maputo
+Content-Type: application/json
+Accept: application/json
