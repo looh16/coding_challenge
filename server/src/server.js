@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require("express");
 const app = express();
 const logger = require('./logger');
-const currencyRouter = require("./currency/currency-router");
+const currencyRouter = require("./currency/router/currency-router");
 const weatherRouter = require("./weather/router/weather-router");
 const countryRouter = require("./country/router/country-router");
 
