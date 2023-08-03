@@ -7,6 +7,6 @@ Content-Type: application/json
 Accept: application/json
 
 ###
-GET {{baseUrl}}/{{urlPath}}/population/mz
+GET {{baseUrl}}/{{urlPath}}/population/MZ
 Content-Type: application/json
 Accept: application/json

@@ -1,26 +1,18 @@
 const axios = require('axios');
-const circularJSON = require('circular-json');
-const flatted = require('flatted');
 const logger = require('../../logger');
 
 const log = logger.createLogger('population-service');
 
+// Indicator code for population (SP.POP.TOTL)
+const indicatorCode = 'SP.POP.TOTL';
+
 async function getCountryPopulation(countryCode) {
 try {
-    const response = await axios.get(`https://restcountries.com/v3.1/alpha/${countryCode}`);
-   // const countryData = response.data[0];
-    const countryData = response.data
+    const response = await axios.get(`https://api.worldbank.org/v2/countries/${countryCode}/indicators/${indicatorCode}?format=json`);
 
-    const countryInfo = {
-        population: countryData.population,
-    };
+    const countryPopulation = response.data[1][0];
+    const population = countryPopulation.value
 
-    console.log(countryInfo);
-
-    // Extract the population value from the response
-    const population = response;
-
-    // return the population
     return population;
     
 } catch (error) {
