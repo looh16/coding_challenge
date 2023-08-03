@@ -14,7 +14,7 @@ async function getCountryDetails(countryCode) {
         const countryDetails = {
             population: data[0].population,
             currency: data[0].currencies,
-            email: Object.keys(data[0].currencies)[0]
+            currencyCode: Object.keys(data[0].currencies)[0]
         };
         
         return countryDetails;

@@ -1,11 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
-
-const BASE_URL = "http://localhost:5000";
-const headers = {
-  "Content-Type": "application/json",
-  Accept: "application/json",
-};
+import Country from "./Country";
+import { BASE_URL, headers } from "../Url";
 
 const SearchBar = () => {
   const [city, setCity] = useState('');
@@ -43,7 +39,9 @@ const SearchBar = () => {
           <li><p>Temperature: {weather.temperature["temperature"]} &#176;C</p></li>
           <li><p>City Name: {weather.temperature.cityName}</p></li>
         </ul>
-        
+      )}
+      {weather && weather.temperature && (
+        <Country countryCode={weather.temperature.countryCode} />
       )}
 
     </div>
