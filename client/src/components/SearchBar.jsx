@@ -25,7 +25,7 @@ const SearchBar = () => {
 
 
   return (
-    <div>
+    <div className="search-bar">
       <h2>Weather Information</h2>
       <input
         type="text"

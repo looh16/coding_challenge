@@ -4,7 +4,7 @@ import './App.scss'
 const App = () =>{
   return (
     <>
-      <div>
+      <div className='container'>
         <Home />
       </div>
     </>

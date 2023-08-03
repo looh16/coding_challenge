@@ -51,6 +51,7 @@ const Country = props => {
         <div>
           <p>Population: {countryDetails.details.population}</p>
           <p>GDP per capita: {calculateGdp()}</p>
+          <h2>Exchange Rates</h2>
           <ul>
             <li>
               <ExchangeRates currencyCode={countryDetails.details.currencyCode} />

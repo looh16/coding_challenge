@@ -32,7 +32,7 @@ const ExchangeRates = (props) => {
         }
 
         return (
-            <table style={{ borderCollapse: 'collapse', width: '100%', border: '1px solid black' }}>
+            <table style={{border: '1px solid black' }}>
                 <thead>
                     <tr>
                         <th style={{ border: '1px solid black', padding: '8px' }}>Currency</th>
