@@ -16,6 +16,9 @@
   <ul>
     <li><a href="https://reactjs.org/">ReactJS</a></li>
   </ul>
+</details>
+
+<details>
    <summary>Server</summary>
   <ul>
     <li><a href="https://nodejs.org/en">NodeJS</a></li>
