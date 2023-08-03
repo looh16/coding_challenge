@@ -9,13 +9,13 @@ const log = logger.createLogger('country-router');
 
 router.get("/gdp/:code", async (req, res) => {
 try {
-    // get the city param
+    // get the country param
     const code = req.params.code;
 
-    // call the service to fetch the weather data from the API
+    // call the service to fetch the gdp data from the API
     const gdp = await countryGDP.getCountryGDP(code);
 
-    //check if the temperature is available
+    //check if the gdp is available
     if(!gdp) {
         res
         .status(HttpStatus.StatusCodes.NOT_FOUND)
@@ -39,14 +39,14 @@ try {
 
 router.get("/population/:code", async (req, res) => {
     try {
-        // get the city param
+        // get the country param
         const code = req.params.code;
     
-        // call the service to fetch the weather data from the API
-        const population = await countryPopulation.getCountryPopulation(code);
+        // call the service to fetch the country data from the API
+        const details = await countryPopulation.getCountryDetails(code);
     
-        //check if the temperature is available
-        if(!population) {
+        //check if the country exists
+        if(!details) {
             res
             .status(HttpStatus.StatusCodes.NOT_FOUND)
             .json({
@@ -58,12 +58,12 @@ router.get("/population/:code", async (req, res) => {
         res
         .status(HttpStatus.StatusCodes.ACCEPTED)
         .json({
-            message: "fetch population data successfully",
-            population
+            message: "fetch country details data successfully",
+            details
         });
     
     } catch (error) {
-        log.error("Unable to fetch population data:", error.message);
+        log.error("Unable to fetch country details data:", error.message);
     }
     });
 
