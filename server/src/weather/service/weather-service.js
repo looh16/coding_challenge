@@ -8,10 +8,7 @@ async function getCityWeatherForecast(city) {
 try {
     // Fetch the weather data from the API
     const response = await axios.get(
-    `http://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
-        city
-    )}&appid=${API_KEY}`
-    );
+    `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`);
 
     // Extract the temperature from the API response in Kelvin
     const temperatureInKelvin = response.data.main.temp;
@@ -21,9 +18,15 @@ try {
 
     // Round the temperature
     const temperature = Math.round(temperatureInCelsius);
+
+    const temperatureDetails = {
+        temperature: temperature,
+        countryCode: response.data.sys.country,
+        cityName:response.data.name
+    };
     
     //return the temperature in Celsius
-    return temperature;
+    return temperatureDetails;
     
 } catch (error) {
     log.error('Error fetching weather data:', error.message);

@@ -2,6 +2,6 @@
 @urlPath = api/weather
 
 ###
-GET {{baseUrl}}/{{urlPath}}/country/maputo
+GET {{baseUrl}}/{{urlPath}}/country/Maputo
 Content-Type: application/json
 Accept: application/json
