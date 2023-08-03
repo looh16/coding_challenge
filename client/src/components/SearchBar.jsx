@@ -41,7 +41,11 @@ const SearchBar = () => {
         </ul>
       )}
       {weather && weather.temperature && (
-        <Country countryCode={weather.temperature.countryCode} />
+        <ul>
+          <li>
+          <Country countryCode={weather.temperature.countryCode} />
+          </li>
+        </ul>
       )}
 
     </div>
