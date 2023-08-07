@@ -69,9 +69,9 @@ Copy the provided API key and paste it into the EXCHANGE_API_KEY variable in the
 - npm install
 - npm start
 
-#Browser
+# Browser
 - After running both the Client and Server applications, you can access the application in your browser by using the following link: [http://localhost:5173/](http://localhost:5173/).
-- 
+  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
