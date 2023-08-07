@@ -57,7 +57,7 @@ git clone https://github.com/looh16/coding_challenge
 - npm install
 - npm run dev
 
-## server
+# server
 - Visit [openweathermap.org](https://openweathermap.org/) and either log in or create a new account.
 Once you're logged in, navigate to the API section to generate a new API key.
 Copy the generated API key and paste it into the WEATHER_API_KEY variable in the [.env file](https://github.com/looh16/coding_challenge/blob/dev/server/.env).
@@ -69,7 +69,7 @@ Copy the provided API key and paste it into the EXCHANGE_API_KEY variable in the
 - npm install
 - npm start
 
-##Browser
+#Browser
 - After running both the Client and Server applications, you can access the application in your browser by using the following link: [http://localhost:5173/](http://localhost:5173/).
 - 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
